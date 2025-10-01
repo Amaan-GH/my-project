@@ -1,0 +1,11 @@
+string $staff[] = {"Pete", "Rob", "Jason"};
+print $staff[1];//print or show the second value
+
+string $happyCube[] = polyCube -name "Cubey";//naming the cube cubey
+print $happyCube[0];//printing the first name
+string $cube = $happyCube[0];
+move 0 1 0 -r $happycube[0];//move the cube -r = relative
+//creating a variable with the value of 2, then multiplying by 10
+int $one = 2;
+int $calc = $one * 10;
+print $calc;

@@ -12,3 +12,25 @@ print $calc;
 
 string $sel[] = `ls -sl`;
 move -r 0 2 0 $sel;
+
+
+//comments
+//Refrenence models that I have created
+
+//Create a UI with two buttons
+
+//Button 1 "Create Environment"
+
+//Button 1: Randomise the scale of model, within a range
+
+//Button 1: Randomise the location of model, within a range
+
+//Button 1: Randomise the rotation of model
+
+//Button 1: Take the models and place several of them in the scene to create an environment
+
+//Button 2 "Delete Environment
+
+//Button 2: Select all models already in scene
+
+//Button 2: Delete all selected

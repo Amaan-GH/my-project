@@ -23,6 +23,22 @@ setParent ..;
 
 showWindow doesEverythingUI;
 
+//Amaans Code, group task
+global proc createCube() {
+    // Creates a cube
+    global string $happyCube[]; 
+    $happyCube = `polyCube -name "happyLittleCube"`;
+
+string $shader = `shadingNode -asShader lambert -name "redLambert"`;
+setAttr ($shader + ".color") -type double3 1 0 0;
+
+string $shadingGroup = `sets -renderable true -noSurfaceShader true -empty -name ($shader + "SG")`;
+connectAttr -f ($shader + ".outColor") ($shadingGroup + ".surfaceShader");
+
+select $happyCube[0];
+sets -e -forceElement $shadingGroup $happyCube[0];
+}
+
 
 
 //comments

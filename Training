@@ -13,6 +13,17 @@ print $calc;
 string $sel[] = `ls -sl`;
 move -r 0 2 0 $sel;
 
+//create ui
+window -title "Buttons" -widthHeight 200 100 doesEverythingUI;
+columnLayout -adjustableColumn true -rowSpacing 10;
+    button -label "Create a Cube" -command "polyCube";
+    button -label "Create wheels" - command "polySphere";
+setParent ..;
+
+
+showWindow doesEverythingUI;
+
+
 
 //comments
 //Refrenence models that I have created

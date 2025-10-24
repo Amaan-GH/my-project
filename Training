@@ -61,3 +61,23 @@ sets -e -forceElement $shadingGroup $happyCube[0];
 //Button 2: Select all models already in scene
 
 //Button 2: Delete all selected
+
+
+//Week 5 Task
+//Forest Generator
+//Amaan Miah
+//Version 1
+
+//This script must generate a variety of trees at a random point in the scene. 
+//The trees must be created with a random size and rotation.
+//The script must create enough trees to make the scene look like a realistic environment.
+//The trees must be created on the ground.
+//The script should be able to create an environment again if the scene is blank.
+
+//The trees should be grouped together and not spread out randomly.
+//The trees should not be created inside of each other.
+//The script should have a button to delete any previous trees created.
+
+//The trees could be coloured and texturised.
+//The script could have a button to add more trees to the environment.
+

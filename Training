@@ -81,3 +81,33 @@ sets -e -forceElement $shadingGroup $happyCube[0];
 //The trees could be coloured and texturised.
 //The script could have a button to add more trees to the environment.
 
+//Refrenence models that I have created
+
+//Create a UI with two buttons
+if (`window -exists doesEverythingUI`)
+deleteUI doesEverythingUI;
+
+window -title "Buttons" -widthHeight 200 100 doesEverythingUI;
+columnLayout -adjustableColumn true -rowSpacing 10;
+    button -label "Create Enviornment";
+    button -label "Delete Environment";
+setParent..;
+
+showWindow doesEverythingUI;
+
+//Button 1 "Create Environment"
+
+//Button 1: Randomise the scale of model, within a range
+
+//Button 1: Randomise the location of model, within a range
+
+//Button 1: Randomise the rotation of model
+
+//Button 1: Take the models and place several of them in the scene to create an environment
+
+//Button 2 "Delete Environment
+
+//Button 2: Select all models already in scene
+
+//Button 2: Delete all selected
+

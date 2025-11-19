@@ -206,3 +206,119 @@ columnLayout -adjustableColumn true -rowSpacing 10;
     button -label "Delete Environment";
 setParent..;
 
+
+//19/11/26
+//Refrenence models that I have created
+global proc CreateTree(){
+   string $newTree[] = `duplicate -rr "Tree_1"`;
+    setAttr ($newTree[0] + ".visibility") 1; 
+    
+    //Move the tree
+    move (rand(-12,12)) 0 (rand(-12,12)) $newTree[0];
+    
+    //rotate the tree
+    int $randY = (int) (`rand -1 1` * 360);   
+    rotate 0 $randY 0 $newTree[0];
+    
+    //Scale the tree
+    scale (rand(0.8,1.4)) (rand(0.8,1.4)) (rand(0.8,1.4)) $newTree[0];
+}
+
+global proc CreateTree2(){
+   string $newTree[] = `duplicate -rr "Tree_2"`;
+    setAttr ($newTree[0] + ".visibility") 1; 
+    
+    //Move the tree
+    move (rand(-12,12)) 0 (rand(-12,12)) $newTree[0];
+    
+    //rotate the tree
+    int $randY = (int) (`rand -1 1` * 360);   
+    rotate 0 $randY 0 $newTree[0];
+    
+    //Scale the tree
+    scale (rand(0.8,1.4)) (rand(0.8,1.4)) (rand(0.8,1.4)) $newTree[0];
+}
+
+global proc CreateTree3(){
+   string $newTree[] = `duplicate -rr "Tree_3"`;
+    setAttr ($newTree[0] + ".visibility") 1; 
+    
+    //Move the tree
+    move (rand(-12,12)) 0 (rand(-12,12)) $newTree[0];
+    
+    //rotate the tree
+    int $randY = (int) (`rand -1 1` * 360);   
+    rotate 0 $randY 0 $newTree[0];
+    
+    //Scale the tree
+    scale (rand(0.8,1.4)) (rand(0.8,1.4)) (rand(0.8,1.4)) $newTree[0];
+}
+
+global proc CreateTree4(){
+   string $newTree[] = `duplicate -rr "Tree_4"`;
+    setAttr ($newTree[0] + ".visibility") 1; 
+    
+    //Move the tree
+    move (rand(-12,12)) 0 (rand(-12,12)) $newTree[0];
+    
+    //rotate the tree
+    int $randY = (int) (`rand -1 1` * 360);      
+    rotate 0 $randY 0 $newTree[0];
+    
+    //Scale the tree
+    scale (rand(0.8,1.4)) (rand(0.8,1.4)) (rand(0.8,1.4)) $newTree[0];
+}
+
+global proc CreateTree5(){
+   string $newTree[] = `duplicate -rr "Tree_5"`;
+    setAttr ($newTree[0] + ".visibility") 1; 
+    
+    //Move the tree
+    move (rand(-12,12)) 0 (rand(-12,12)) $newTree[0];
+    
+    //rotate the tree
+    int $randY = (int) (`rand -1 1` * 360);      
+    rotate 0 $randY 0 $newTree[0];
+    
+    //Scale the tree
+    scale (rand(0.8,1.4)) (rand(0.8,1.4)) (rand(0.8,1.4)) $newTree[0];
+}
+
+
+
+
+
+//Create a UI with two buttons
+if (`window -exists doesEverythingUI`)
+deleteUI doesEverythingUI;
+
+window -title "Buttons" -widthHeight 200 100 doesEverythingUI;
+columnLayout -adjustableColumn true -rowSpacing 10;
+    button -label "Create Tree 1" -command "CreateTree";
+    button -label "Create Tree 2" -command "CreateTree2";
+    button -label "Create Tree 3" -command "CreateTree3";
+    button -label "Create Tree 4" -command "CreateTree4";
+    button -label "Create Bush" -command "CreateTree5";
+    button -label "Delete Environment" -command "DeleteEnvironment()";
+setParent..;
+
+showWindow doesEverythingUI;
+
+//Button 1 "Create Environment"
+
+//Button 1: Randomise the scale of model, within a range
+
+//Button 1: Randomise the location of model, within a range
+
+//Button 1: Randomise the rotation of model
+
+
+
+
+//Button 1: Take the models and place several of them in the scene to create an environment
+
+//Button 2 "Delete Environment
+
+//Button 2: Select all models already in scene
+
+//Button 2: Delete all selected

@@ -451,3 +451,167 @@ columnLayout -adjustableColumn true -rowSpacing 10;
 setParent..;
 
 showWindow doesEverythingUI;
+
+
+10/12/25
+global string $lastCreatedTree = "";
+
+//Delete the last created tree
+global proc DeleteLastTree() {
+    global string $lastCreatedTree; 
+
+    if ($lastCreatedTree != "") {
+        // Delete the last created tree
+        delete $lastCreatedTree;
+        
+        $lastCreatedTree = "";
+    } else {
+        confirmDialog -ma "center" -m "No trees in scene";
+    }
+}
+
+// Create Tree 1
+global proc CreateTree() {
+    global string $lastCreatedTree; 
+    string $newTree[] = `duplicate -rr "Tree_1"`;
+    setAttr ($newTree[0] + ".visibility") 1;
+    
+    $lastCreatedTree = $newTree[0];
+    
+    // Move the tree
+    move (rand(-12,12)) 0 (rand(-12,12)) $newTree[0];
+    
+    // Rotate the tree
+    int $randY = (int) (`rand -1 1` * 360);   
+    rotate 0 $randY 0 $newTree[0];
+    
+    // Scale the tree
+    scale (rand(0.8,1.4)) (rand(0.8,1.4)) (rand(0.8,1.4)) $newTree[0];
+}
+
+//Create Tree 2
+global proc CreateTree2() {
+    global string $lastCreatedTree; 
+    string $newTree[] = `duplicate -rr "Tree_2"`;
+    setAttr ($newTree[0] + ".visibility") 1;
+    
+    $lastCreatedTree = $newTree[0];
+    
+    // Move the tree
+    move (rand(-12,12)) 0 (rand(-12,12)) $newTree[0];
+    
+    // Rotate the tree
+    int $randY = (int) (`rand -1 1` * 360);   
+    rotate 0 $randY 0 $newTree[0];
+    
+    // Scale the tree
+    scale (rand(0.8,1.4)) (rand(0.8,1.4)) (rand(0.8,1.4)) $newTree[0];
+}
+
+// Create Tree 3
+global proc CreateTree3() {
+    global string $lastCreatedTree; 
+    string $newTree[] = `duplicate -rr "Tree_3"`;
+    setAttr ($newTree[0] + ".visibility") 1;
+    
+    $lastCreatedTree = $newTree[0];
+    
+    // Move the tree
+    move (rand(-12,12)) 0 (rand(-12,12)) $newTree[0];
+    
+    // Rotate the tree
+    int $randY = (int) (`rand -1 1` * 360);   
+    rotate 0 $randY 0 $newTree[0];
+    
+    // Scale the tree
+    scale (rand(0.8,1.4)) (rand(0.8,1.4)) (rand(0.8,1.4)) $newTree[0];
+}
+
+// Create Tree 4
+global proc CreateTree4() {
+    global string $lastCreatedTree;  
+    string $newTree[] = `duplicate -rr "Tree_4"`;
+    setAttr ($newTree[0] + ".visibility") 1;
+    
+    $lastCreatedTree = $newTree[0];
+    
+    // Move the tree
+    move (rand(-12,12)) 0 (rand(-12,12)) $newTree[0];
+    
+    // Rotate the tree
+    int $randY = (int) (`rand -1 1` * 360);   
+    rotate 0 $randY 0 $newTree[0];
+    
+    // Scale the tree
+    scale (rand(0.8,1.4)) (rand(0.8,1.4)) (rand(0.8,1.4)) $newTree[0];
+}
+
+// Create Tree 5
+global proc CreateTree5() {
+    global string $lastCreatedTree;  
+    string $newTree[] = `duplicate -rr "Tree_5"`;
+    setAttr ($newTree[0] + ".visibility") 1;
+    
+    $lastCreatedTree = $newTree[0];
+    
+    // Move the tree
+    move (rand(-12,12)) 0 (rand(-12,12)) $newTree[0];
+    
+    // Rotate the tree
+    int $randY = (int) (`rand -1 1` * 360);   
+    rotate 0 $randY 0 $newTree[0];
+    
+    // Scale the tree
+    scale (rand(0.8,1.4)) (rand(0.8,1.4)) (rand(0.8,1.4)) $newTree[0];
+}
+
+global proc CreateEnvironment()
+{
+    string $trees[] = {
+    "Tree_1",
+    "Tree_2",
+    "Tree_3",
+    "Tree_4",
+    "Tree_5"
+};
+
+// Create 10 trees
+for ($i = 0; $i < 10; $i++)
+{
+    int $index = rand(0, size($trees) - 1);  
+    string $model = $trees[$index];
+
+    string $newTree[] = `duplicate -rr $model`;
+    
+    setAttr ($newTree[0] + ".visibility") 1;
+
+    int $x = rand(-12, 12);
+    int $z = rand(-12, 12);
+
+    move $x 0 $z $newTree[0];
+    
+    // Rotate the tree
+    int $randY = (int) (`rand -1 1` * 360);   
+    rotate 0 $randY 0 $newTree[0];
+    
+    // Scale the tree
+    scale (rand(0.8,1.4)) (rand(0.8,1.4)) (rand(0.8,1.4)) $newTree[0];
+}
+}
+
+// Create UI
+if (`window -exists doesEverythingUI`) 
+    deleteUI doesEverythingUI;
+
+window -title "Buttons" -widthHeight 200 100 doesEverythingUI;
+columnLayout -adjustableColumn true -rowSpacing 10;
+    button -label "Create Tree 1" -command "CreateTree";
+    button -label "Create Tree 2" -command "CreateTree2";
+    button -label "Create Tree 3" -command "CreateTree3";
+    button -label "Create Tree 4" -command "CreateTree4";
+    button -label "Create Bush" -command "CreateTree5";
+    button -label "Create Environment of Trees" -command "CreateEnvironment";
+    button -label "Delete Last Model" -command "DeleteLastTree";
+setParent..;
+
+showWindow doesEverythingUI;
